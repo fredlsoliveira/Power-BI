@@ -1,0 +1,12 @@
+Média Hora Formatada = 
+VAR vHorasDecimal = AVERAGE(DB_CSC[DELTA (Total Min)])
+VAR vHoras = INT ( vHorasDecimal )
+VAR vMinutosDecimal = 60 * ( vHorasDecimal - vHoras )
+VAR vMinutos = INT ( vMinutosDecimal )
+VAR vSegundos = ROUND ( 60 * ( vMinutosDecimal - vMinutos ); 0 )
+VAR vHH = IF ( LEN ( vHoras ) = 1; "0" & vHoras; vHoras )
+VAR vMM = IF ( LEN ( vMinutos ) = 1; "0" & vMinutos; vMinutos )
+VAR vSS = IF ( LEN ( vSegundos ) = 1; "0" & vSegundos; vSegundos )
+VAR vResultado = vHH & ":" & vMM & ":" & vSS
+RETURN
+vResultado 
