@@ -1,7 +1,7 @@
 let
     DataInicio = List.Min(Table.Column(#"NOME_TABELA","NOME_COLUNA")),
     DataFim = List.Max(Table.Column(#"NOME_TABELA","NOME_COLUNA")),
-    //Culture: se não for explicitamente setada,pega o valor associado ao arquivo
+    //Culture: se não for explicitamente setada, pega o valor associado ao arquivo
     Culture = "pt-BR",
     CountDias = Duration.Days(DataFim - DataInicio),
     ListDatas = List.Dates(DataInicio, CountDias,#duration(1,0,0,0)),
