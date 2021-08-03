@@ -1,0 +1,29 @@
+//Indice para verificar qtd de vezes apareceu a falha.
+Index = 
+RANKX (
+    FILTER ( Plan1; Plan1[Falha] = EARLIER ( [Falha] ) );
+    Plan1[Data];
+    ;
+    ASC;
+    DENSE
+)
+
+//Contando intervalo dias pela data da falha q se repete.
+Re Admission = 
+VAR PreviousDischargeDate =
+    CALCULATE (
+        MAX ( PLAN1[DATA]);
+        FILTER (
+            ALLEXCEPT ( PLAN1; PLAN1[FALHA] );
+            PLAN1[INDEX]
+                = EARLIER ( PLAN1[INDEX] ) - 1
+        )
+    )
+RETURN
+    IF (
+        NOT ( ISBLANK ( PreviousDischargeDate ) );
+        IF (
+            PreviousDischargeDate < PLAN1[DATA];
+            DATEDIFF ( PreviousDischargeDate; PLAN1[DATA]; DAY )
+        )
+    )

@@ -1,0 +1,16 @@
+Operadores
+O Power BI dá suporte a diversos operadores além do 'and'. A tabela a seguir lista esses operadores, 
+juntamente com o tipo de conteúdo compatível com eles.
+
+operador	definição	    cadeia de caracteres	número	Data	Exemplo
+and		    e		        sim			            sim	    sim	    product/price le 200 and price gt 3.5
+eq		    igual a		    sim			            sim	    sim	    Address/City eq 'Redmond'
+ne		    diferente de	sim			            sim	    sim	    Address/City ne 'London'
+ge		    maior ou igual	não			            sim	    sim	    product/price ge 10
+gt		    maior que	    não			            sim	    sim	    product/price gt 20
+le		    menor ou igual	não			            sim	    sim	    product/price le 100
+lt		    menor que	    não			            sim	    sim	    product/price lt 20
+in**		incluindo	    sim			            sim	    sim	    Student/Age in (27, 29)
+
+Exemplo:
+http://dominio?filter=TABELA/CAMPO eq '1' and TABELA/CAMPO eq 'XXXX'&rs:embed=true

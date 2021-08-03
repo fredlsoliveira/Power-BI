@@ -1,0 +1,17 @@
+//1º PASSO
+_mAnoAtual = IF(ISFILTERED('DATA GERAL'[Ano]) = TRUE; MAX('DATA GERAL'[Ano]); YEAR(LASTDATE('DATA GERAL'[DATA GERAL]) ))
+
+//2º PASSO
+_mMêsAtual = IF(ISFILTERED('DATA GERAL'[Mês]) = TRUE; MAX('DATA GERAL'[Num Mês]);
+			 IF([_mAnoAtual] = YEAR(TODAY()); MONTH(TODAY()); MONTH(LASTDATE('DATA GERAL'[DATA GERAL]))))			 
+
+//3º PASSO
+_mDataRef = IF(HASONEFILTER('DATA GERAL'[Ano]); DATE(ALLSELECTED('DATA GERAL'[Ano]);[_mMêsAtual];01); DATE(MAX('DATA GERAL'[Ano]);[_mMêsAtual];01))
+
+//4º PASSO
+_Qtd Inscrito = 
+    VAR
+        mDataRef_Inc = [_mDataRef]
+    Return   
+        CALCULATE(SUM(INSCRITOS[QTD INSCRITOS]);FILTER('DATA GERAL';'DATA GERAL'[DATA GERAL]<=TODAY());
+            'DATA GERAL'[Ano] = YEAR(mDataRef_Inc); 'DATA GERAL'[Num Mês] = MONTH(mDataRef_Inc))
