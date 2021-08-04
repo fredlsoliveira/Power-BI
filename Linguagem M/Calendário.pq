@@ -22,8 +22,6 @@ let
     #"Personalização Adicionada" = Table.AddColumn(#"Dias inseridos no Mês", "Dia Corrido", each if [Data] < DateTime.Date(DateTime.LocalNow()) then 1 else 0,Int64.Type),
     #"Últimos caracteres inseridos" = Table.AddColumn(#"Personalização Adicionada", "Últimos caracteres", each Text.End(Text.From([Fechamento Mês], "pt-BR"), 2), type text),
     #"Texto Inserido Entre os Delimitadores" = Table.AddColumn(#"Últimos caracteres inseridos", "Texto Entre os Delimitadores", each Text.BetweenDelimiters(Text.From([Fechamento Mês], "pt-BR"), "/", "/"), type text),
-    #"Colunas Mescladas" = Table.CombineColumns(#"Texto Inserido Entre os Delimitadores",{"Últimos caracteres", "Texto Entre os Delimitadores"},Combiner.CombineTextByDelimiter("/", QuoteStyle.None),"Ano/Mes"),
-    #"Consultas Mescladas" = Table.NestedJoin(#"Colunas Mescladas", {"Ano/Mes"}, #"Producao (Qtde Dias Produtivo)", {"Ano/Mês"}, "Producao (Qtde Dias Produtivo)", JoinKind.LeftOuter),
-    #"Producao (Qtde Dias Produtivo) Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "Producao (Qtde Dias Produtivo)", {"Qtde Dias Produtivo"}, {"Qtde Dias Produtivo"})
+    #"Colunas Mescladas" = Table.CombineColumns(#"Texto Inserido Entre os Delimitadores",{"Últimos caracteres", "Texto Entre os Delimitadores"},Combiner.CombineTextByDelimiter("/", QuoteStyle.None),"Ano/Mes")
 in
-    #"Producao (Qtde Dias Produtivo) Expandido"
+    #"Colunas Mescladas"

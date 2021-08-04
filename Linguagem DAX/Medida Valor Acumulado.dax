@@ -1,0 +1,15 @@
+Valor Acumulado = 
+VAR vVariavel =
+    MAX ( 'TABELA'[INDEX] )
+RETURN
+    SUMX (
+        FILTER (
+            SUMMARIZE (
+                ALLSELECTED ( 'TABELA' ),
+                [INDEX],
+                "Soma", SUM ( 'TABELA'[CAMPO VALOR] )
+            ),
+            [INDEX] <= vVariavel
+        ),
+        [Soma]
+    )
