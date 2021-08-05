@@ -1,0 +1,11 @@
+//1° Medida
+Valor Total = SUM(Tabela[CampoValor])
+
+//2° Medida
+Rank = RANKX(ALL(Tabela[CampoDimensao]),[Valor Total],,DESC)
+
+//3° Medida
+Valor Acumulado = CALCULATE([Valor Total],TOPN([Rank],ALL(Tabela[CampoDimensao]),[Valor Total],DESC))
+
+//4° Medida
+Valor % Acumulado = [Valor Acumulado] / CALCULATE([Valor Total],ALL(Tabela[CampoDimensao]))
