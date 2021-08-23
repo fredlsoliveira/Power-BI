@@ -1,0 +1,13 @@
+------------------------------------------------------------------
+Dobragem de consultas do Power Query
+https://docs.microsoft.com/pt-br/power-query/power-query-folding
+
+------------------------------------------------------------------
+Diretrizes de dobragem de consultas no Power BI Desktop
+https://docs.microsoft.com/pt-br/power-bi/guidance/power-query-folding
+
+------------------------------------------------------------------
+Atualização incremental para conjuntos de dados
+https://docs.microsoft.com/pt-br/power-bi/connect-data/incremental-refresh-overview
+
+------------------------------------------------------------------
