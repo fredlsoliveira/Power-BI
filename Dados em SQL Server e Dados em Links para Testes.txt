@@ -1,0 +1,39 @@
+
+** FONTES PARA SER USADOS EM ESTUDOS E TESTES POSSIBILITANDO SIMULAÇÕES COM DADOS REAIS **
+
+
+--------------------------------
+BANCOS DE DADOS PARA SQL SERVER
+--------------------------------
+
+1) WIDE WORLD IMPORTERS (Tabela com 321 mil linhas)
+https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
+
+2) ADVENTURE WORKS 2017 OLTP (Tabela com 121 mil linhas)
+https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak
+
+3) ADVENTURE WORKS 2017 DW (Tabela com 121 mil linhas)
+https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2017.bak
+
+4) CONTOSO CORPORATION (Tabela com 3.4 milhões de linhas)
+https://www.microsoft.com/en-us/download/details.aspx?id=18279
+
+
+--------------------------------
+DADOS PARA CONSUTA LINKS
+--------------------------------
+
+1) IBGE
+https://servicodados.ibge.gov.br/api/docs
+
+2) PORTAL BRASILEIRO DE DADOS ABERTOS
+http://dados.gov.br/
+
+3) PORTAL DA TRANSPARÊNCIA
+http://www.portaltransparencia.gov.br/download-de-dados
+
+4) CÂMARA DOS DEPUTADOS
+https://dadosabertos.camara.leg.br/swagger/api.html#staticfile
+
+5) WORLD BANK
+https://data.worldbank.org/
