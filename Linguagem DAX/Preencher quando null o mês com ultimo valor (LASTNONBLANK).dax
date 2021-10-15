@@ -1,0 +1,13 @@
+//Medida que preenche com o último valor do mês os outros meses que estejam null
+
+Valor Total (ultimo registro) = 
+CALCULATE(
+    [Valor],
+    LASTNONBLANK(
+        FILTER(
+            ALL(Calendario[Mes Num],Calendario[Mes]),
+            Calendario[Mes Num] <= MAX(Calendario[Mes Num])
+        ),
+        [Valor]
+    )
+)
