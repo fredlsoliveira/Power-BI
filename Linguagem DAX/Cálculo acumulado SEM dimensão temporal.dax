@@ -1,0 +1,7 @@
+
+Qtde Acumulada = 
+VAR Empresa = MAX(fDados[Empresa])
+VAR Semana = MAX(fDados[Semana do Ano])
+VAR Solucao = CALCULATE(COUNT(fDados[ID]),FILTER(ALL(fDados),fDados[Semana do Ano]<=Semana),fDados[Empresa]=Empresa)
+RETURN
+Solucao
