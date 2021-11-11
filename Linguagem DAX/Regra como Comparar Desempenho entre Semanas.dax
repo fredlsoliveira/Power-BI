@@ -1,0 +1,27 @@
+
+// MEDIDA 1
+Qtde Semana = COUNT(TABELA[ID])
+
+
+
+// MEDIDA 2
+Qtde Semana Anterior = 
+VAR semana_atual = SELECTEDVALUE(TABELA[SEMANA])
+RETURN
+CALCULATE(
+    [Qtde Semana],
+    FILTER(
+        ALL(TABELA[SEMANA]),
+        EBO[SEMANA] < semana_atual && TABELA[SEMANA] > semana_atual - 2
+    )
+)
+
+
+
+// MEDIDA 3
+Qtde Delta Semana = [Qtde Semana] - [Qtde Semana Anterior]
+
+
+
+// MEDIDA 4
+% WoW = DIVIDE([Qtde Semana],[Qtde Semana Anterior]) -1
