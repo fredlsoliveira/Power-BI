@@ -12,7 +12,7 @@ CALCULATE(
     [Qtde Semana],
     FILTER(
         ALL(TABELA[SEMANA]),
-        EBO[SEMANA] < semana_atual && TABELA[SEMANA] > semana_atual - 2
+        TABELA[SEMANA] < semana_atual && TABELA[SEMANA] > semana_atual - 2
     )
 )
 
